@@ -14,7 +14,7 @@ public class Human : MonoBehaviour {
     [SerializeField] private float maxMoveDistance;
     [SerializeField] private float moveCooldown;
     [SerializeField] private float stoppingDistance = .1f;
-    [SerializeField] private float catchingDistance = .4f;
+    [SerializeField] private float catchingDistance = 1.5f;
 
 
     private NavMeshAgent agent;
@@ -65,13 +65,19 @@ public class Human : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
-        isChasing = true;
-        destination = other.transform.position;
-        agent.SetDestination(destination);
+        if (other.gameObject.TryGetComponent(out Player player)) {
+            isChasing = true;
+            destination = other.transform.position;
+            agent.SetDestination(destination);
 
-        if (Vector3.Distance(transform.position, other.transform.position) < catchingDistance) {
-            // Catch player
+            if (Vector3.Distance(transform.position, other.transform.position) < catchingDistance) {
+                // Disable AI
+                agent.enabled = false;
 
+                // Catch player
+                player.Caught();
+                GameManager.Instance.EndGame();
+            }
         }
     }
 
