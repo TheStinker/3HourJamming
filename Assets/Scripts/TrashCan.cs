@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrashCan : MonoBehaviour, Interactable
 {
-    [SerializeField] private int trashPieces = 6;
+    [SerializeField] private int trashPieces = 3;
     [SerializeField] private float timeBetweenEach = 1f;
     private Animator animator;
     private Vector3 savedPosition;

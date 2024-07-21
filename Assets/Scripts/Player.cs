@@ -12,9 +12,12 @@ public class Player : MonoBehaviour
     private Vector2 movement;
     private PlayerInput playerInput;
     private Interactable interactable;
+    private Quaternion savedRotation;
     private void Start()
     {
+        savedRotation = transform.rotation;
         rb = GetComponent<Rigidbody>(); 
+        animator = GetComponent<Animator>();
         playerInput = GetComponent<PlayerInput>();
     }
     public void OnMove(InputValue value)
@@ -37,14 +40,33 @@ public class Player : MonoBehaviour
             );
         rb.MoveRotation(targetRotation);
     }
+    public void Starve()
+    {  
+        playerInput.DeactivateInput();
+        transform.rotation = savedRotation;  
+        animator.Play("starve");
+        CameraFollower.Instance.ZoomIn();
+    }
+    public void Fat()
+    {
+        playerInput.DeactivateInput();
+        transform.rotation = savedRotation;
+        animator.Play("fat");
+        CameraFollower.Instance.ZoomIn();
+    }
     public void Caught()
     {
+        playerInput.DeactivateInput();
+        transform.rotation = savedRotation;
         animator.Play("caught");
-        // Camera Logic
+        CameraFollower.Instance.ZoomIn();
     }
     public void Ranover()
     {
+        playerInput.DeactivateInput();
+        //transform.rotation = savedRotation;
         animator.Play("ranover");
+        CameraFollower.Instance.ZoomIn();
     }
     private void OnTriggerStay(Collider other)
     {
