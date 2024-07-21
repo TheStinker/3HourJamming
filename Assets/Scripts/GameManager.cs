@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,11 +29,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject restartPanelLose;
     [SerializeField] private float duration = 120f;
     [SerializeField] private Player player;
+    [SerializeField] private GameObject sun;
     private float currentTime;
     private bool gameOver;
     private void Start()
     {
         currentTime = Time.time + duration;
+        sun.GetComponent<Animator>().SetFloat("speed", 1f / duration);
         player = FindAnyObjectByType<Player>();
     }
     private void Update()
