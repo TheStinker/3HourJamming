@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 20090f9add00a13458a06745b79c4771
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 9fc4724b774e7284c88f8377742312de
+  - enabled: 1
     path: Assets/Scenes/JosephCreation.unity
     guid: 39266c267e59f954f8a0653c7aebb6f6
   m_configObjects: {}
