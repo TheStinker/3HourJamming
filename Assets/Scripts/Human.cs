@@ -55,7 +55,7 @@ public class Human : MonoBehaviour {
                     if (PositionValid(hit.position)) {
                         destination = hit.position;
                         agent.SetDestination(destination);
-                        
+
                         isMoving = true;
                         moveCooldownTimer = moveCooldown;
                     }
@@ -66,6 +66,14 @@ public class Human : MonoBehaviour {
 
     private void OnTriggerStay(Collider other) {
         if (other.gameObject.TryGetComponent(out Player player)) {
+            if (!InYardBounds(player.transform.position)) {
+                if (isChasing) {
+                    isMoving = false;
+                    isChasing = false;
+                }
+                return;
+            }
+
             isChasing = true;
             destination = other.transform.position;
             agent.SetDestination(destination);
@@ -94,7 +102,14 @@ public class Human : MonoBehaviour {
             return false;
         }
 
-        // In yard bounds
+        if (!InYardBounds(position)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private bool InYardBounds(Vector3 position) {
         if (position.x > boundsMax.x || position.x < boundsMin.x ||
             position.z > boundsMax.z || position.z < boundsMin.z) {
             //Debug.Log("Out of bounds " + position);
