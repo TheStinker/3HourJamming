@@ -75,6 +75,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6839530647661380991, guid: eb1c297fcc0766d4589a5c28c9422600,
         type: 3}
+      propertyPath: moveCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6839530647661380991, guid: eb1c297fcc0766d4589a5c28c9422600,
+        type: 3}
       propertyPath: maxMoveDistance
       value: 12
       objectReference: {fileID: 0}

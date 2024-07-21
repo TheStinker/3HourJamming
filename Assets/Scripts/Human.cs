@@ -13,6 +13,8 @@ public class Human : MonoBehaviour {
     [SerializeField] private float minMoveDistance;
     [SerializeField] private float maxMoveDistance;
     [SerializeField] private float moveCooldown;
+    [SerializeField] private float stoppingDistance = .1f;
+    [SerializeField] private float catchingDistance = .4f;
 
 
     private NavMeshAgent agent;
@@ -36,7 +38,7 @@ public class Human : MonoBehaviour {
         }
 
         if (isMoving) {
-            if (Vector3.Distance(transform.position, destination) < 0.1f) {
+            if (Vector3.Distance(transform.position, destination) < stoppingDistance) {
                 isMoving = false;
             }
         } else {
@@ -63,7 +65,20 @@ public class Human : MonoBehaviour {
     }
 
     private void OnTriggerStay(Collider other) {
+        isChasing = true;
         destination = other.transform.position;
+        agent.SetDestination(destination);
+
+        if (Vector3.Distance(transform.position, other.transform.position) < catchingDistance) {
+            // Catch player
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        isChasing = false;
+        isMoving = true;
+        moveCooldownTimer = moveCooldown;
     }
 
     private bool PositionValid(Vector3 position) {
