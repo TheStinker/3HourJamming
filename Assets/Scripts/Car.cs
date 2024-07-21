@@ -6,10 +6,15 @@ public class Car : MonoBehaviour
 {
     private Rigidbody rb;
     public float speed;
+    public bool forward;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.velocity = Vector3.forward * speed;
+        
+    }
+    private void FixedUpdate()
+    {
+        rb.velocity = (forward ? Vector3.forward : Vector3.back) * speed;
     }
     private void OnCollisionEnter(Collision collision)
     {
