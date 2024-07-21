@@ -51,11 +51,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   navMeshArea: {fileID: 0}
-  minMoveDistance: 8
-  maxMoveDistance: 12
+  minMoveDistance: 6
+  maxMoveDistance: 10
   moveCooldown: 2
   stoppingDistance: 0.1
   catchingDistance: 1.25
+  destination: {x: 0, y: 0, z: 0}
+  boundsMin: {x: 0, y: 0, z: 0}
+  boundsMax: {x: 0, y: 0, z: 0}
+  moveCooldownTimer: 0
+  isMoving: 0
+  isChasing: 0
 --- !u!195 &1601771789666255099
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -66,7 +72,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -97,7 +103,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 6
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
