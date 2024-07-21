@@ -11,9 +11,9 @@ public class Car : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.velocity = Vector3.forward * speed;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.TryGetComponent(out Player player))
+        if (collision.transform.TryGetComponent(out Player player))
         {
             player.Ranover();
             GameManager.Instance.EndGame();
