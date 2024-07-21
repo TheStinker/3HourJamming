@@ -57,8 +57,8 @@ public class TrashCan : MonoBehaviour, Interactable
     }
     private void GetOut()
     {
+        player.transform.position = player.transform.position + Vector3.back * 0.5f;
         player.transform.SetParent(savedParent, true);
-        player.transform.position = savedPosition;
         animator.Play("closelid");
         raccoonInbin = false;
     }
