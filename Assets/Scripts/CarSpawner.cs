@@ -20,7 +20,7 @@ public class CarSpawner : MonoBehaviour
         {
             currentlySpawned = Instantiate(car).GetComponent<Car>();
             currentlySpawned.forward = forward;
-            currentlySpawned.transform.Rotate(Vector3.up * (forward ? 0f : 180f));
+            currentlySpawned.transform.Rotate(Vector3.forward * (forward ? 0f : 180f));
             currentlySpawned.transform.position = transform.position;
             interval = Time.time + duration;
         }
