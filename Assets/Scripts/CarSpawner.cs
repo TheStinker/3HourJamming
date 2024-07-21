@@ -8,11 +8,12 @@ public class CarSpawner : MonoBehaviour
     public GameObject car;
     public bool forward;
     public float duration;
+    public float delay;
     private float interval;
     private Car currentlySpawned;
     private void Start()
     {
-        interval = duration + Time.time;
+        interval = delay + duration + Time.time;
     }
     private void Update()
     {

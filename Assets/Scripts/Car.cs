@@ -18,6 +18,10 @@ public class Car : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "border")
+        {
+            Destroy(gameObject);
+        }
         if (collision.transform.TryGetComponent(out Player player))
         {
             player.Ranover();
