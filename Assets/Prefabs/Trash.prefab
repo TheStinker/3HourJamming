@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de761c9d2c5e86947aaca6de568cf8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trashPieces: 6
+  trashPieces: 3
   timeBetweenEach: 1
 --- !u!95 &6710681602017288126
 Animator:
