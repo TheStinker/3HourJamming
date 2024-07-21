@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentTime = Time.time + duration;
+        player = FindAnyObjectByType<Player>();
     }
     private void Update()
     {
