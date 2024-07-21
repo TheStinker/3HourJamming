@@ -49,11 +49,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclesLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   navMeshArea: {fileID: 0}
-  minMoveDistance: 0
-  maxMoveDistance: 0
-  moveCooldown: 0
+  minMoveDistance: 8
+  maxMoveDistance: 12
+  moveCooldown: 2
+  stoppingDistance: 0.1
+  catchingDistance: 1.25
 --- !u!195 &1601771789666255099
 NavMeshAgent:
   m_ObjectHideFlags: 0
