@@ -93,6 +93,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2931532091917412779}
   m_PrefabAsset: {fileID: 0}
+--- !u!33 &4382568702884166645 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 1476309745001468510, guid: cd59f286573a20246a614839cbae7f81,
+    type: 3}
+  m_PrefabInstance: {fileID: 2931532091917412779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4177124900858981906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +231,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5821734029600714958, guid: b589a21fedf18904c8b61ab2edbeee30,
+        type: 3}
+      propertyPath: navMeshArea
+      value: 
+      objectReference: {fileID: 4382568702884166645}
     - target: {fileID: 6660669531019976322, guid: b589a21fedf18904c8b61ab2edbeee30,
         type: 3}
       propertyPath: m_Name

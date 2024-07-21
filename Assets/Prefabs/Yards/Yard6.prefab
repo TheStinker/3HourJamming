@@ -63,6 +63,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Human6
       objectReference: {fileID: 0}
+    - target: {fileID: 9012479750841266880, guid: bdec96b7dd00a874291c00cbb8d388d0,
+        type: 3}
+      propertyPath: navMeshArea
+      value: 
+      objectReference: {fileID: 4345126664866385522}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -184,6 +189,12 @@ PrefabInstance:
 --- !u!4 &4198524290144467859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1329755765704632255, guid: cd59f286573a20246a614839cbae7f81,
+    type: 3}
+  m_PrefabInstance: {fileID: 2895843465700236332}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &4345126664866385522 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 1476309745001468510, guid: cd59f286573a20246a614839cbae7f81,
     type: 3}
   m_PrefabInstance: {fileID: 2895843465700236332}
   m_PrefabAsset: {fileID: 0}

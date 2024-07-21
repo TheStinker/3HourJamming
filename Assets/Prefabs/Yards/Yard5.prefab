@@ -169,6 +169,12 @@ PrefabInstance:
       addedObject: {fileID: 1415107567148910129}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd59f286573a20246a614839cbae7f81, type: 3}
+--- !u!33 &851797304912188956 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 1476309745001468510, guid: cd59f286573a20246a614839cbae7f81,
+    type: 3}
+  m_PrefabInstance: {fileID: 2282998210952660034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &998368739595756541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1329755765704632255, guid: cd59f286573a20246a614839cbae7f81,
@@ -195,6 +201,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 998368739595756541}
     m_Modifications:
+    - target: {fileID: 3732418991683766140, guid: 4807034a20efc784f800799bc86a093c,
+        type: 3}
+      propertyPath: navMeshArea
+      value: 
+      objectReference: {fileID: 851797304912188956}
     - target: {fileID: 4569377547068533040, guid: 4807034a20efc784f800799bc86a093c,
         type: 3}
       propertyPath: m_Name

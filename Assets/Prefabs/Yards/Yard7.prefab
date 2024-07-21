@@ -189,6 +189,12 @@ PrefabInstance:
       addedObject: {fileID: 3939652694156946001}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd59f286573a20246a614839cbae7f81, type: 3}
+--- !u!33 &1767221578685813331 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 1476309745001468510, guid: cd59f286573a20246a614839cbae7f81,
+    type: 3}
+  m_PrefabInstance: {fileID: 935210838816161805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2201895864323123122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1329755765704632255, guid: cd59f286573a20246a614839cbae7f81,
@@ -270,6 +276,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Human7
       objectReference: {fileID: 0}
+    - target: {fileID: 5501464646922981153, guid: 544e1047eb56bc74aa5081cf308838d3,
+        type: 3}
+      propertyPath: navMeshArea
+      value: 
+      objectReference: {fileID: 1767221578685813331}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

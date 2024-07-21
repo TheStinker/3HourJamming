@@ -163,6 +163,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6995026669987523760, guid: da67dac6271ffa4478e71bab44f5e218,
+        type: 3}
+      propertyPath: navMeshArea
+      value: 
+      objectReference: {fileID: 8857644983908475446}
     - target: {fileID: 7905739664603775740, guid: da67dac6271ffa4478e71bab44f5e218,
         type: 3}
       propertyPath: m_Name
@@ -314,6 +319,12 @@ PrefabInstance:
 --- !u!4 &3480900408398284746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6836163725690910626, guid: cd59f286573a20246a614839cbae7f81,
+    type: 3}
+  m_PrefabInstance: {fileID: 7966949976374784104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &8857644983908475446 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 1476309745001468510, guid: cd59f286573a20246a614839cbae7f81,
     type: 3}
   m_PrefabInstance: {fileID: 7966949976374784104}
   m_PrefabAsset: {fileID: 0}
