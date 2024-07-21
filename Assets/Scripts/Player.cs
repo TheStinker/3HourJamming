@@ -8,13 +8,15 @@ public class Player : MonoBehaviour
     [SerializeField] private float speed;
     public int trashCollected = 0;
     private Animator animator;
-    private Rigidbody rb;
+    public Rigidbody rb;
     private Vector2 movement;
     private PlayerInput playerInput;
     private Interactable interactable;
     private Quaternion savedRotation;
+    public bool isMoving;
     private void Start()
     {
+        isMoving = true;
         savedRotation = transform.rotation;
         rb = GetComponent<Rigidbody>(); 
         animator = GetComponent<Animator>();
@@ -30,7 +32,7 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = speed * new Vector3(movement.x, 0, movement.y);
+        rb.velocity = isMoving ? speed * new Vector3(movement.x, 0, movement.y) : Vector3.zero;
         if (movement == Vector2.zero) return;
         Quaternion targetRotation = Quaternion.LookRotation(rb.velocity.normalized);
         targetRotation = Quaternion.RotateTowards(
