@@ -20,8 +20,8 @@ public class Human : MonoBehaviour {
 
     private NavMeshAgent agent;
     [SerializeField] private Vector3 destination;
-    private Vector3 boundsMin;
-    private Vector3 boundsMax;
+    [SerializeField] private Vector3 boundsMin;
+    [SerializeField] private Vector3 boundsMax;
     [SerializeField] private float moveCooldownTimer;
     [SerializeField] private bool isMoving = false;
     [SerializeField] private bool isChasing = false;
@@ -29,8 +29,8 @@ public class Human : MonoBehaviour {
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
-        boundsMin = navMeshArea.mesh.bounds.min * 4;
-        boundsMax = navMeshArea.mesh.bounds.max * 4;
+        boundsMin = navMeshArea.transform.position + navMeshArea.mesh.bounds.min * 4;
+        boundsMax = navMeshArea.transform.position + navMeshArea.mesh.bounds.max * 4;
     }
 
     private void Update() {
@@ -46,23 +46,36 @@ public class Human : MonoBehaviour {
             if (moveCooldownTimer > 0) {
                 moveCooldownTimer -= Time.deltaTime;
             } else {
-                Vector3 randomDirection = Random.insideUnitSphere;
-                randomDirection.y = 0;
-                randomDirection *= maxMoveDistance;
-                if (randomDirection.magnitude < minMoveDistance) {
-                    randomDirection = randomDirection.normalized * minMoveDistance;
-                }
-                Vector3 testDestination = transform.position + randomDirection;
-                if (NavMesh.SamplePosition(testDestination, out NavMeshHit hit, 2.0f, NavMesh.AllAreas)) {
-                    if (PositionValid(hit.position)) {
-                        destination = hit.position;
-                        agent.SetDestination(destination);
-
-                        isMoving = true;
-                        moveCooldownTimer = moveCooldown;
-                    }
-                }
+                SelectNewDestination();
             }
+        }
+    }
+
+    private void SelectNewDestination() {
+        Vector3 randomDirection = Random.insideUnitSphere;
+        randomDirection.y = 0;
+        randomDirection *= maxMoveDistance;
+        if (randomDirection.magnitude < minMoveDistance) {
+            randomDirection = randomDirection.normalized * minMoveDistance;
+        }
+        if (NavMesh.SamplePosition(transform.position + randomDirection, out NavMeshHit hit, 2.0f, NavMesh.AllAreas)) {
+            if (PositionValid(hit.position)) {
+                destination = hit.position;
+                agent.SetDestination(destination);
+
+                isMoving = true;
+                moveCooldownTimer = moveCooldown;
+            }
+        } else if (NavMesh.SamplePosition(transform.position - randomDirection, out NavMeshHit backup, 2.0f, NavMesh.AllAreas)) {
+            if (PositionValid(backup.position)) {
+                destination = backup.position;
+                agent.SetDestination(destination);
+
+                isMoving = true;
+                moveCooldownTimer = moveCooldown;
+            }
+        } else {
+            destination = navMeshArea.transform.position;
         }
     }
 
@@ -102,7 +115,7 @@ public class Human : MonoBehaviour {
 
     private bool PositionValid(Vector3 position) {
         // Position clear
-        if (Physics.Raycast(position, Vector3.up, 2f, obstaclesLayerMask)) {
+        if (Physics.Raycast(position + Vector3.down, Vector3.up, 4f, obstaclesLayerMask)) {
             return false;
         }
 

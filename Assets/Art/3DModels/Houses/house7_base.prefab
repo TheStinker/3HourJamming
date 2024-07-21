@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8844474713814806745}
   - component: {fileID: 2480378744808949644}
   - component: {fileID: 4466227993812572204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: house7_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 8113169935664469028}
   - component: {fileID: 3779221897432602737}
   - component: {fileID: 3254112748918146616}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pane7-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 5524891814953809075}
   - component: {fileID: 8953007553207422173}
   - component: {fileID: 7930212159043389935}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: door7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 8714020904284627934}
   - component: {fileID: 7719866883287922803}
   - component: {fileID: 5771028679807115661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: frame7-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 1579052112275165616}
   - component: {fileID: 8148579594888313766}
   - component: {fileID: 3116213695223965534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pane7-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

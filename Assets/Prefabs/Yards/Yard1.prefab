@@ -42,7 +42,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 11.315, y: 5, z: 4.68}
+  m_Extents: {x: 11.405, y: 5, z: 5.45}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
@@ -69,12 +69,12 @@ PrefabInstance:
     - target: {fileID: 1329755765704632255, guid: cd59f286573a20246a614839cbae7f81,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.78162766
       objectReference: {fileID: 0}
     - target: {fileID: 1329755765704632255, guid: cd59f286573a20246a614839cbae7f81,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -7.440995
       objectReference: {fileID: 0}
     - target: {fileID: 1329755765704632255, guid: cd59f286573a20246a614839cbae7f81,
         type: 3}
@@ -115,6 +115,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5105047502544255485, guid: cd59f286573a20246a614839cbae7f81,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 16.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144851969634924948, guid: cd59f286573a20246a614839cbae7f81,
+        type: 3}
+      propertyPath: m_Extents.x
+      value: 11.675
+      objectReference: {fileID: 0}
+    - target: {fileID: 6144851969634924948, guid: cd59f286573a20246a614839cbae7f81,
+        type: 3}
+      propertyPath: m_Extents.z
+      value: 5.25
       objectReference: {fileID: 0}
     - target: {fileID: 7029348281540029446, guid: cd59f286573a20246a614839cbae7f81,
         type: 3}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1559817331873140774}
   - component: {fileID: 7105267842090937033}
   - component: {fileID: 4100103286440252397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pane3-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2431020981294607647}
   - component: {fileID: 5511614142784301686}
   - component: {fileID: 3103048385281654968}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pane3-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 8418416857602812067}
   - component: {fileID: 5693153179905563940}
   - component: {fileID: 1829883284795467992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: house3_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 7932894029966640886}
   - component: {fileID: 1646082007617689854}
   - component: {fileID: 260462185825481545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pane3-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 5522712359455679929}
   - component: {fileID: 6009101478426365605}
   - component: {fileID: 7548334847948626945}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pane3-5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 8507496458312374607}
   - component: {fileID: 3345534810548110223}
   - component: {fileID: 4438332224867101049}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: door1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   - component: {fileID: 466163993123293074}
   - component: {fileID: 4163800789767734667}
   - component: {fileID: 3065500831422764951}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: frames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 5550382265365442484}
   - component: {fileID: 3870081278373955955}
   - component: {fileID: 8356472987255732140}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: pane3-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
