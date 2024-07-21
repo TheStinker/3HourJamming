@@ -105,10 +105,10 @@ MeshCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7715356985485625289, guid: e121775acc1995e408baf20f01af7d61, type: 3}
 --- !u!114 &6272275892706576753
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trashPieces: 3
   timeBetweenEach: 1
+  trashcancollider: {fileID: 2287986880926889186}
 --- !u!95 &6710681602017288126
 Animator:
   serializedVersion: 5
@@ -195,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 8460918622896883988}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.005091471, z: -0.0026957581}
+  m_LocalPosition: {x: 0, y: 0.005091471, z: -0.0027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

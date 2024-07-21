@@ -6,6 +6,7 @@ public class TrashCan : MonoBehaviour, Interactable
 {
     [SerializeField] private int trashPieces = 3;
     [SerializeField] private float timeBetweenEach = 1f;
+    [SerializeField] private Collider trashcancollider;
     private Animator animator;
     private Vector3 savedPosition;
     private Transform savedParent;
@@ -47,18 +48,18 @@ public class TrashCan : MonoBehaviour, Interactable
     }
     private void Rummage()
     {
-        savedParent = player.transform.parent;
-        savedPosition = player.transform.position;
-        player.transform.SetParent(transform, true);
-        player.transform.position = transform.position + Vector3.up * 0.2f;
+        trashcancollider.enabled = false;
+        player.rb.position = transform.position + Vector3.up * 0.2f;
+        player.isMoving = false;
         cooldown = Time.time + timeBetweenEach;
         animator.Play("openlid");
         raccoonInbin = true;
     }
     private void GetOut()
     {
-        player.transform.position = player.transform.position + Vector3.back * 1f;
-        player.transform.SetParent(savedParent, true);
+        trashcancollider.enabled = true;
+        player.rb.position = player.rb.position + Vector3.back * 1f;
+        player.isMoving = true;
         animator.Play("closelid");
         raccoonInbin = false;
     }
