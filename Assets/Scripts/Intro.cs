@@ -19,7 +19,7 @@ public class Intro : MonoBehaviour
         if (Time.time >= duration && !played)
         {
             played = true;
-            SceneManager.LoadScene("JosephCreation");
+            SceneManager.LoadScene("StartMenu");
         }
         
     }
