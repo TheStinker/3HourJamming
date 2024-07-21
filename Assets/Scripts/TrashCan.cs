@@ -33,7 +33,7 @@ public class TrashCan : MonoBehaviour, Interactable
     }
     public void Interact(Player player)
     {
-        if (trashPieces <= 0 && Time.time >= delay) return;
+        if (trashPieces <= 0 || Time.time < delay) return;
         delay = Time.time + 0.4f;
         this.player = player;
         if (!raccoonInbin)
