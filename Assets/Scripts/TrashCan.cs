@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class TrashCan : MonoBehaviour, Interactable
 {
@@ -8,6 +9,7 @@ public class TrashCan : MonoBehaviour, Interactable
     [SerializeField] private float timeBetweenEach = 1f;
     [SerializeField] private Collider trashcancollider;
     private Animator animator;
+    private AudioSource source;
     private Vector3 savedPosition;
     private Transform savedParent;
     private Player player;
@@ -17,6 +19,7 @@ public class TrashCan : MonoBehaviour, Interactable
     private void Start()
     {
         animator = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -52,6 +55,7 @@ public class TrashCan : MonoBehaviour, Interactable
         player.rb.position = transform.position + Vector3.up * 0.2f;
         player.isMoving = false;
         cooldown = Time.time + timeBetweenEach;
+        source.Play();
         animator.Play("openlid");
         raccoonInbin = true;
     }
@@ -60,6 +64,7 @@ public class TrashCan : MonoBehaviour, Interactable
         trashcancollider.enabled = true;
         player.rb.position = player.rb.position + Vector3.back * 1f;
         player.isMoving = true;
+        source.Stop();
         animator.Play("closelid");
         raccoonInbin = false;
     }
