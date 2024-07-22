@@ -16,10 +16,10 @@ public class Human : MonoBehaviour {
     [SerializeField] private float moveCooldown;
     [SerializeField] private float stoppingDistance = .1f;
     [SerializeField] private float catchingDistance = 1.5f;
-
+    [SerializeField] private AudioSource spotted;
+    [SerializeField] private AudioSource escaped;
 
     private NavMeshAgent agent;
-    private AudioSource source;
     [SerializeField] private Vector3 destination;
     [SerializeField] private Vector3 boundsMin;
     [SerializeField] private Vector3 boundsMax;
@@ -30,7 +30,6 @@ public class Human : MonoBehaviour {
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
-        source = GetComponent<AudioSource>();
         boundsMin = navMeshArea.transform.position + navMeshArea.mesh.bounds.min * 4;
         boundsMax = navMeshArea.transform.position + navMeshArea.mesh.bounds.max * 4;
     }
@@ -91,6 +90,10 @@ public class Human : MonoBehaviour {
                 return;
             }
 
+            if (!isChasing) {
+                spotted.Play();
+            }
+
             isChasing = true;
             destination = other.transform.position;
             agent.SetDestination(destination);
@@ -112,6 +115,8 @@ public class Human : MonoBehaviour {
             isChasing = false;
             isMoving = true;
             moveCooldownTimer = moveCooldown;
+            
+            escaped.Play();
         }
     }
 
