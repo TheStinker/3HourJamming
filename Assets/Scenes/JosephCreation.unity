@@ -141,11 +141,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 8590237886140959767}
-    - target: {fileID: 62547863663868734, guid: 8c7414d23d17e7e4d8c28bc870e38ee3,
-        type: 3}
-      propertyPath: duration
-      value: 180
-      objectReference: {fileID: 0}
     - target: {fileID: 1950847690686643386, guid: 8c7414d23d17e7e4d8c28bc870e38ee3,
         type: 3}
       propertyPath: m_Name
