@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Unity.VisualScripting.Member;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private float speed;
+    public AudioClip starve;
+    public AudioClip ranover;
+    public AudioClip caught;
+    private AudioSource source;
     public int trashCollected = 0;
     private Animator animator;
     public Rigidbody rb;
@@ -16,6 +21,7 @@ public class Player : MonoBehaviour
     public bool isMoving;
     private void Start()
     {
+        source = GetComponent<AudioSource>();
         isMoving = true;
         savedRotation = transform.rotation;
         rb = GetComponent<Rigidbody>(); 
@@ -45,7 +51,9 @@ public class Player : MonoBehaviour
     public void Starve()
     {  
         playerInput.DeactivateInput();
-        transform.rotation = savedRotation;  
+        transform.rotation = savedRotation;
+        source.clip = starve;
+        source.Play();
         animator.Play("starve");
         CameraFollower.Instance.ZoomIn();
     }
@@ -60,6 +68,8 @@ public class Player : MonoBehaviour
     {
         playerInput.DeactivateInput();
         transform.rotation = savedRotation;
+        source.clip = caught;
+        source.Play();
         animator.Play("caught");
         CameraFollower.Instance.ZoomIn();
     }
@@ -67,6 +77,8 @@ public class Player : MonoBehaviour
     {
         playerInput.DeactivateInput();
         //transform.rotation = savedRotation;
+        source.clip = ranover;
+        source.Play();
         animator.Play("ranover");
         CameraFollower.Instance.ZoomIn();
     }

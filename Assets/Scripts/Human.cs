@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class Human : MonoBehaviour {
 
-
+    
     [SerializeField] private LayerMask obstaclesLayerMask;
     [SerializeField] private MeshFilter navMeshArea;
     [SerializeField] private float minMoveDistance;
@@ -19,6 +19,7 @@ public class Human : MonoBehaviour {
 
 
     private NavMeshAgent agent;
+    private AudioSource source;
     [SerializeField] private Vector3 destination;
     [SerializeField] private Vector3 boundsMin;
     [SerializeField] private Vector3 boundsMax;
@@ -29,6 +30,7 @@ public class Human : MonoBehaviour {
 
     private void Start() {
         agent = GetComponent<NavMeshAgent>();
+        source = GetComponent<AudioSource>();
         boundsMin = navMeshArea.transform.position + navMeshArea.mesh.bounds.min * 4;
         boundsMax = navMeshArea.transform.position + navMeshArea.mesh.bounds.max * 4;
     }
